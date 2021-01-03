@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IT自学吧</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.6.1/dist/style.css" />
+  <script>
+	var _hmt = _hmt || [];
+	(function() { 
+    // MARK: ===========================百度统计，请移除此处代码==============================
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?c70166876c49625d2a39ad01a26ff538";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    // ================================== END ==============================================
+	})();
+  </script>
+  
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'IT自学吧',
+      repo: 'https://gitee.com/itzixueba',
+      loadNavbar: true,
+      loadSidebar: true, // 加载自定义侧边栏
+      maxLevel: 2, // 默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级。
+      subMaxLevel: 4, // 生成目录的最大层级
+      mergeNavbar: true, // 小屏设备下合并导航栏到侧边栏
+      coverpage: true,  //首页
+      auto2top: true,
+      search: {
+        placeholder: '搜索',
+        noData: '找不到结果!',
+        depth: 3
+      },
+      alias: { // 定义路由别名，可以更自由的定义路由规则。 支持正则
+        '/.*/_sidebar.md': '/_sidebar.md',//防止意外回退
+        '/.*/_navbar.md': '/_navbar.md'
+      },
+      pagination: {
+        previousText: '上一篇',
+        nextText: '下一篇',
+        crossChapter: true,
+        crossChapterText: true
+      },
+      darkMode: {
+        light: {
+          toggleBtnBg: '#42b983'
+        }
+      },
+      plugins: [
+        function (hook) {
+          var header = [
+            '<p>',
+              // '<a href="https://www.aliyun.com/sale-season/2020/procurement-new-members?userCode=thp9caen">',
+              //'<img src="https://gitee.com/itzixueba/images/raw/master/img/addme.jpg" alt="公众号" width="430px" height="136px" style="margin-top:-70px">',
+            '</p>'
+          ].join('');
+          var footer = [
+            '<hr/>',
+            '<footer style="text-align: center">',
+              '<p>',
+              // '<a href="https://www.aliyun.com/sale-season/2020/procurement-new-members?userCode=thp9caen">',
+              //'<img src="http://cdn.jayh.club/blog/20200910/8cQn6wSJtQND.png?imageslim" alt="公众号" width="557px" height="294px">',
+			  '<img src="https://gitee.com/itzixueba/images/raw/master/img/addme.jpg" alt="微信" width="557px" height="294px">',
+            '</p>',
+            '<span><a href="https://itzixueba.com/" target="_blank">京ICP备18060789号-2</a></span>',
+            '</footer>'
+          ].join('');
+          hook.afterEach(function (html) {
+            var isReadme = window.location.href.indexOf("README");
+            if (isReadme === -1) {
+              return header + html + footer;
+            } else {
+              return html + footer;
+            }
+          });
+        }
+      ]
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-dark-mode@0.6.1/dist/index.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+	
+</body>
+</html>
